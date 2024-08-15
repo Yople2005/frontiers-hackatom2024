@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D NPP SMRs | Interactive Tools</title>
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        /* Custom CSS for 3D NPP SMRs Page */
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 60px;
+        }
+
+        .navbar {
+            background-color: #0F172B !important; /* Ensure this color is applied */
+        }
+
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            margin-bottom: 30px;
+        }
+
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .page-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .btn-back {
+            background-color: #0F172B;
+            border-color: #0F172B;
+            border-radius: 50px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .btn-back:hover {
+            background-color: #1d4ed8;
+            border-color: #1d4ed8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <h1 class="text-primary m-0"><i class="fa fa-radiation"></i> Hackathon</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0 pe-4">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about-smrs.html" class="nav-item nav-link">About SMRs</a>
+                    <a href="interactive-tools.html" class="nav-item nav-link">Interactive Tools</a>
+                    <a href="news-updates.html" class="nav-item nav-link">News & Updates</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="faq.html" class="dropdown-item">FAQs</a>
+                            <a href="benefits-of-smrs.html" class="dropdown-item">Benefits of SMRs</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="" class="btn btn-primary py-2 px-4">Get Involved</a>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+
+        <!-- 3D NPP SMRs Tool Start -->
+        <div class="container">
+            <h2 class="page-header">3D NPP SMRs</h2>
+            <div class="iframe-container">
+                <iframe src="https://3d.energyencyclopedia.com/npp-smr?mode=iframe" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <a href="interactive-tools.html" class="btn btn-back mb-3">Back to Interactive Tools</a>
+        </div>
+        <!-- 3D NPP SMRs Tool End -->
+
+        <!-- Footer Start -->
+        <footer class="container-xxl bg-dark text-white py-2">
+            <div class="container text-center text-md-start">
+                <div class="row">
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">About Us</h6>
+                        <p>At the forefront of innovation, we drive the adoption of small modular reactors (SMRs) to revolutionize energy access in Myanmar. Our focus is on advancing technology, fostering sustainable development, and empowering communities with clean, reliable energy solutions.</p>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Quick Links</h6>
+                        <p><a href="index.html" class="text-white">Home</a></p>
+                        <p><a href="about-smrs.html" class="text-white">About SMRs</a></p>
+                        <p><a href="interactive-tools.html" class="text-white">Interactive Tools</a></p>
+                        <p><a href="news-updates.html" class="text-white">News & Updates</a></p>
+                        <p><a href="faq.html" class="text-white">FAQs</a></p>
+                        <p><a href="contact.html" class="text-white">Contact</a></p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i> Yangon, Myanmar</p>
+                        <p><i class="fas fa-envelope me-3"></i> info@example.com</p>
+                        <p><i class="fas fa-phone me-3"></i> +95 123 4567</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End -->
+
+        <!-- Back to Top Button -->
+        <a href="#" class="btn btn-primary btn-lg back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Calculator | Interactive Tools</title>
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        /* Custom CSS for Energy Calculator Page */
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 60px;
+        }
+
+        .navbar {
+            background-color: #0F172B !important;
+        }
+
+        .page-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .btn-submit {
+            background-color: #0F172B;
+            border-color: #0F172B;
+            border-radius: 50px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            display: block;
+            width: 100%;
+
+        }
+
+        .btn-submit:hover {
+            background-color: #1d4ed8;
+            border-color: #1d4ed8;
+        }
+
+        .results {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer{
+            margin-top:10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <h1 class="text-primary m-0"><i class="fa fa-radiation"></i> Hackathon</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0 pe-4">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about-smrs.html" class="nav-item nav-link">About SMRs</a>
+                    <a href="interactive-tools.html" class="nav-item nav-link">Interactive Tools</a>
+                    <a href="news-updates.html" class="nav-item nav-link">News & Updates</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="faq.html" class="dropdown-item">FAQs</a>
+                            <a href="benefits-of-smrs.html" class="dropdown-item">Benefits of SMRs</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="" class="btn btn-primary py-2 px-4">Get Involved</a>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+
+        <!-- Energy Calculator Tool Start -->
+        <div class="container">
+            <h2 class="page-header">Energy Calculator</h2>
+            <form id="energyCalculatorForm">
+                <div class="form-group">
+                    <label for="currentEnergyUsage">Current Energy Usage (kWh/month)</label>
+                    <input type="number" class="form-control" id="currentEnergyUsage" placeholder="Enter current energy usage" required>
+                </div>
+                <div class="form-group">
+                    <label for="newEnergyUsage">New Energy Usage (kWh/month)</label>
+                    <input type="number" class="form-control" id="newEnergyUsage" placeholder="Enter new energy usage" required>
+                </div>
+                <button type="submit" class="btn btn-submit">Calculate Savings</button>
+            </form>
+
+            <div class="results" id="results" style="display: none;">
+                <h3>Results</h3>
+                <p><strong>Potential Savings:</strong> <span id="savings"></span></p>
+                <p><strong>Environmental Benefits:</strong> <span id="benefits"></span></p>
+            </div>
+        </div>
+        <!-- Energy Calculator Tool End -->
+
+        <!-- Footer Start -->
+        <footer class="container-xxl bg-dark text-white py-2">
+            <div class="container text-center text-md-start">
+                <div class="row">
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">About Us</h6>
+                        <p>At the forefront of innovation, we drive the adoption of small modular reactors (SMRs) to revolutionize energy access in Myanmar. Our focus is on advancing technology, fostering sustainable development, and empowering communities with clean, reliable energy solutions.</p>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Quick Links</h6>
+                        <p><a href="index.html" class="text-white">Home</a></p>
+                        <p><a href="about-smrs.html" class="text-white">About SMRs</a></p>
+                        <p><a href="interactive-tools.html" class="text-white">Interactive Tools</a></p>
+                        <p><a href="news-updates.html" class="text-white">News & Updates</a></p>
+                        <p><a href="faq.html" class="text-white">FAQs</a></p>
+                        <p><a href="contact.html" class="text-white">Contact</a></p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i> Yangon, Myanmar</p>
+                        <p><i class="fas fa-envelope me-3"></i> info@example.com</p>
+                        <p><i class="fas fa-phone me-3"></i> +95 123 4567</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End -->
+
+        <!-- Back to Top Button -->
+        <a href="#" class="btn btn-primary btn-lg back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Custom Script -->
+    <script>
+        document.getElementById('energyCalculatorForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get values from the form
+            const currentEnergyUsage = parseFloat(document.getElementById('currentEnergyUsage').value);
+            const newEnergyUsage = parseFloat(document.getElementById('newEnergyUsage').value);
+
+            // Calculate potential savings
+            const savings = (currentEnergyUsage - newEnergyUsage) * 0.1; // Example savings calculation
+            const benefits = (currentEnergyUsage - newEnergyUsage) * 0.05; // Example environmental benefits calculation
+
+            // Display results
+            document.getElementById('savings').textContent = `$${savings.toFixed(2)} per month`;
+            document.getElementById('benefits').textContent = `${benefits.toFixed(2)} tons of CO2 per month`;
+
+            document.getElementById('results').style.display = 'block';
+        });
+    </script>
+</body>
+
+</html>

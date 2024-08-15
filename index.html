@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Interactive Application to Promote Small Power Reactors in Myanmar</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Interactive application, small power reactors, Myanmar, development" name="keywords">
+    <meta content="Explore interactive tools and resources to support the development and promotion of small power reactors in Myanmar." name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="text-primary m-0"><i class="fa fa-radiation"></i> Hackathon</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0 pe-4">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="about-smrs.html" class="nav-item nav-link">About SMRs</a>
+                        <a href="benefits-of-smr.html" class="nav-item nav-link">Benefits of SMRs</a>
+                        <a href="news-updates.html" class="nav-item nav-link">News & Updates</a>
+                        <a href="faq.html" class="nav-item nav-link">FAQs</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <a href="quiz.html" class="btn btn-primary py-2 px-4">Quiz</a>
+                </div>
+            </nav>
+
+            <div class="container-xxl py-5 bg-dark hero-header mb-5">
+                <div class="container my-10 py-5">
+                    <div class="row align-items-center g-5">
+                        <div class="col-lg-6 text-center text-lg-start">
+                            <h1 class="display-3 text-white animated slideInLeft">Explore Our<br>Interactive Tools</h1>
+                            <p class="text-white animated slideInLeft mb-4 pb-2">Discover how small power reactors can transform energy development in Myanmar through interactive tools and resources.</p>
+
+                            <a href="interactive-tools.html" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">
+                                Learn More
+                            </a>
+                        </div>
+                        <div class="col-lg-6 text-center text-lg-end overflow-hidden">
+                            <img class="img-fluid" src="img/hero.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- Service Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item rounded pt-3">
+                            <div class="p-4">
+                                <i class="fas fa-shield-alt fa-2x text-primary mb-4"></i>
+                                <h5>Enhanced Safety Features</h5>
+                                <p>Advanced safety features to minimize risks and ensure secure operations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item rounded pt-3">
+                            <div class="p-4">
+                                <i class="fas fa-dollar-sign fa-2x text-primary mb-4"></i>
+                                <h5>Cost Efficiency</h5>
+                                <p>Affordable construction and operational costs compared to traditional reactors.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item rounded pt-3">
+                            <div class="p-4">
+                                <i class="fas fa-leaf fa-2x text-primary mb-4"></i>
+                                <h5>Environmental Benefits</h5>
+                                <p>Lower environmental impact with reduced waste and emissions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="service-item rounded pt-3">
+                            <div class="p-4">
+                                <i class="fas fa-cogs fa-2x text-primary mb-4"></i>
+                                <h5>Operational Flexibility</h5>
+                                <p>Versatile deployment with modular construction and suitability for various locations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Service End -->
+
+        <!-- About Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="row g-3">
+                            <div class="col-6 text-start">
+                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="img/reactor.jpeg">
+                            </div>
+                            <div class="col-6 text-start">
+                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s" src="img/reactor.jpeg" style="margin-top: 25%;">
+                            </div>
+                            <div class="col-6 text-end">
+                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.5s" src="img/reactor.jpeg">
+                            </div>
+                            <div class="col-6 text-end">
+                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.7s" src="img/reactor.jpeg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">About Small Power Reactors</h5>
+                        <h1 class="mb-4">Welcome to <i class="fa fa-radiation"></i> Small Power Reactors</h1>
+                        <p class="mb-4">Small power reactors are a transformative solution for energy needs, offering high safety, cost-efficiency, and environmental benefits. Our interactive application provides valuable tools and resources to understand and promote these innovative reactors in Myanmar.</p>
+                        <a class="btn btn-primary py-2 px-4" href="about-smrs.html">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+      <!-- Case Studies Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Case Studies & Success Stories</h2>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="case-study-item rounded p-4 bg-light">
+                    <img class="img-fluid mb-3" src="img/case-study1.jpg" alt="Case Study 1">
+                    <h5>Project A in Myanmar</h5>
+                    <p>Explore the successful implementation of a small power reactor in rural Myanmar, providing reliable and sustainable energy to local communities.</p>
+                    <a href="case-study1.html" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="case-study-item rounded p-4 bg-light">
+                    <img class="img-fluid mb-3" src="img/case-study2.jpg" alt="Case Study 2">
+                    <h5>Innovative Reactor Design</h5>
+                    <p>Learn about cutting-edge reactor designs that offer enhanced safety and efficiency for small power reactors.</p>
+                    <a href="case-study2.html" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="case-study-item rounded p-4 bg-light">
+                    <img class="img-fluid mb-3" src="img/case-study3.jpg" alt="Case Study 3">
+                    <h5>Community Impact</h5>
+                    <p>Discover how small power reactors have positively impacted communities through job creation and energy access.</p>
+                    <a href="case-study3.html" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Case Studies End -->
+
+<!-- Interactive Tools Start -->
+<!-- Interactive Tools Start -->
+<div class="container-xxl py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Explore Our Interactive Tools</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="tool-item rounded p-4 bg-white">
+                    <i class="fa fa-cube fa-3x text-primary mb-3"></i>
+                    <h5>3D SMR</h5>
+                    <p>Interact with a 3D model of a Small Modular Reactor (SMR) to understand its design and functionality in detail.</p>
+                    <a href="3d-smrs.html" class="btn btn-primary">View Model</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="tool-item rounded p-4 bg-white">
+                    <i class="fa fa-cube fa-3x text-primary mb-3"></i>
+                    <h5>3D NPP SMR</h5>
+                    <p>Explore a 3D model of a Nuclear Power Plant (NPP) with Small Modular Reactors (SMRs) to see how they integrate into larger systems.</p>
+                    <a href="3d-npp-smrs.html" class="btn btn-primary">View Model</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="tool-item rounded p-4 bg-white">
+                    <i class="fa fa-calculator fa-3x text-primary mb-3"></i>
+                    <h5>Energy Calculator</h5>
+                    <p>Calculate potential savings and environmental benefits of different energy-saving measures and technologies.</p>
+                    <a href="energy-calculator.html" class="btn btn-primary">Try Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Interactive Tools End -->
+
+<!-- Interactive Tools End -->
+
+<!-- Upcoming Events Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Upcoming Events</h2>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="event-item rounded p-4 bg-light">
+                    <h5>Webinar on Small Power Reactors</h5>
+                    <p>Join us for an insightful webinar discussing the latest advancements and applications of small power reactors.</p>
+                    <p>Date: September 15, 2024</p>
+                    <a href="webinar.html" class="btn btn-primary">Register</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="event-item rounded p-4 bg-light">
+                    <h5>Annual Conference on Nuclear Energy</h5>
+                    <p>Attend the annual conference to network with experts and learn about the future of nuclear energy.</p>
+                    <p>Date: October 20-22, 2024</p>
+                    <a href="conference.html" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="event-item rounded p-4 bg-light">
+                    <h5>Community Outreach Program</h5>
+                    <p>Participate in our community outreach program to educate the public about the benefits of small power reactors.</p>
+                    <p>Date: November 5, 2024</p>
+                    <a href="outreach-program.html" class="btn btn-primary">Get Involved</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Upcoming Events End -->
+
+
+<!-- Footer Start -->
+<!-- Footer Start -->
+<footer class="container-xxl bg-dark text-white py-5">
+    <div class="container text-center text-md-start">
+        <div class="row">
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-4">
+                <h6 class="text-uppercase fw-bold mb-4">About Us</h6>
+                <p>At the forefront of innovation, we drive the adoption of small modular reactors (SMRs) to revolutionize energy access in Myanmar. Our focus is on advancing technology, fostering sustainable development, and empowering communities with clean, reliable energy solutions.</p>
+            </div>
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                <h6 class="text-uppercase fw-bold mb-4">Quick Links</h6>
+                <p><a href="index.html" class="text-white">Home</a></p>
+                <p><a href="about-smrs.html" class="text-white">About SMRs</a></p>
+                <p><a href="interactive-tools.html" class="text-white">Interactive Tools</a></p>
+                <p><a href="news-updates.html" class="text-white">News & Updates</a></p>
+                <p><a href="contact.html" class="text-white">Contact</a></p>
+            </div>
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                <p><i class="fas fa-home me-3"></i>1234 Street Name, City, Country</p>
+                <p><i class="fas fa-envelope me-3"></i>info@example.com</p>
+                <p><i class="fas fa-phone me-3"></i>+123 456 7890</p>
+                <p><i class="fas fa-fax me-3"></i>+123 456 7891</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer End -->
+
+<!-- Footer End -->
+
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
+
+
+this is the homepage of my website for hackathon with a title of "Interactive application to promote the development of small power reactors in Myanmar". create a quiz page for me
