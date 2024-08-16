@@ -30,6 +30,38 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .card-img-top {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        /* Adjusting the card sizes */
+        .card-container {
+            display: flex;
+            gap: 1rem;
+        }
+        .card-container .card {
+            flex: 1;
+            max-width: 48%; /* Adjust this value for card width */
+        }
+        .card-container .card:first-child {
+            flex: 2; /* Makes the first card wider */
+        }
+        .card-container .card img {
+            height: 230px; /* Adjust the image height */
+            object-fit: cover;
+        }
+    
+    </style>
 </head>
 
 <body>
@@ -55,10 +87,10 @@
                     <div class="navbar-nav ms-auto py-0 pe-4">
                         <a href="index.html" class="nav-item nav-link active">Home</a>
                         <a href="about-smrs.html" class="nav-item nav-link">About SMRs</a>
-                        <a href="benefits-of-smr.html" class="nav-item nav-link">Benefits of SMRs</a>
-                        <a href="news-updates.html" class="nav-item nav-link">News & Updates</a>
+                        <a href="dashboard.html" class="nav-item nav-link">Dashboard</a>
+                        <a href="./interactive-tools.html" class="nav-item nav-link">Interactive Tools</a>
                         <a href="faq.html" class="nav-item nav-link">FAQs</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        
                     </div>
                     <a href="quiz.html" class="btn btn-primary py-2 px-4">Quiz</a>
                 </div>
@@ -78,6 +110,7 @@
                         <div class="col-lg-6 text-center text-lg-end overflow-hidden">
                             <img class="img-fluid" src="img/hero.png" alt="">
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -135,17 +168,18 @@
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6">
                         <div class="row g-3">
+                           
                             <div class="col-6 text-start">
-                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="img/reactor.jpeg">
+                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s" src="img/reactor1.jpg" style="margin-top: 25%; border: 1px solid black;">
                             </div>
                             <div class="col-6 text-start">
-                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s" src="img/reactor.jpeg" style="margin-top: 25%;">
+                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="img/reactor2.jpg" style="border: 1px solid black;">
                             </div>
                             <div class="col-6 text-end">
-                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.5s" src="img/reactor.jpeg">
+                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.5s" src="img/reactor3.png" style="border: 1px solid black;">
                             </div>
                             <div class="col-6 text-end">
-                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.7s" src="img/reactor.jpeg">
+                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.7s" src="img/reactor4.jfif" style="border: 1px solid black;">
                             </div>
                         </div>
                     </div>
@@ -160,77 +194,34 @@
         </div>
         <!-- About End -->
 
-      <!-- Case Studies Start -->
-<div class="container-xxl py-5">
-    <div class="container">
-        <h2 class="text-center mb-4">Case Studies & Success Stories</h2>
-        <div class="row g-4">
-            <div class="col-lg-4 col-md-6">
-                <div class="case-study-item rounded p-4 bg-light">
-                    <img class="img-fluid mb-3" src="img/case-study1.jpg" alt="Case Study 1">
-                    <h5>Project A in Myanmar</h5>
-                    <p>Explore the successful implementation of a small power reactor in rural Myanmar, providing reliable and sustainable energy to local communities.</p>
-                    <a href="case-study1.html" class="btn btn-primary">Read More</a>
+        <!-- Contract & Events Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Contracts & Events</h5>
+                    <h1 class="mb-5">Key Contracts and Events</h1>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="case-study-item rounded p-4 bg-light">
-                    <img class="img-fluid mb-3" src="img/case-study2.jpg" alt="Case Study 2">
-                    <h5>Innovative Reactor Design</h5>
-                    <p>Learn about cutting-edge reactor designs that offer enhanced safety and efficiency for small power reactors.</p>
-                    <a href="case-study2.html" class="btn btn-primary">Read More</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="case-study-item rounded p-4 bg-light">
-                    <img class="img-fluid mb-3" src="img/case-study3.jpg" alt="Case Study 3">
-                    <h5>Community Impact</h5>
-                    <p>Discover how small power reactors have positively impacted communities through job creation and energy access.</p>
-                    <a href="case-study3.html" class="btn btn-primary">Read More</a>
+                <div class="card-container">
+                    <div class="card wow fadeInUp" data-wow-delay="0.3s">
+                        <img src="img/myanmar-russia-contract.jpg" class="card-img-top" alt="Myanmar-Russia Nuclear Power Plant Contract">
+                        <div class="card-body">
+                            <h5 class="card-title">Myanmar-Russia Nuclear Power Plant Contract</h5>
+                            <p class="card-text">In 2023, Myanmar and Russia signed a landmark contract to collaborate on building a nuclear power plant. This initiative is set to revolutionize Myanmar's energy sector by introducing advanced nuclear technology and fostering long-term energy security.</p>
+                            <a href="https://myanmar-now.org/en/news/rosatom-signs-agreement-with-myanmar-junta-on-development-use-of-nuclear-energy/" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                    <div class="card wow fadeInUp" data-wow-delay="0.5s">
+                        <img src="img/rosatom-festival.jpg" class="card-img-top" alt="Rosatom Science Festival 2024">
+                        <div class="card-body">
+                            <h5 class="card-title">Science Festival by Rosatom at Yangon Technological University</h5>
+                            <p class="card-text">Rosatom hosted a science festival at Yangon Technological University in 2023 and 2024. These events showcased advancements in nuclear technology and engaged the academic community in discussions about the future of energy in Myanmar.</p>
+                            <a href="https://atommedia.online/en/2023/06/30/festival-nauki-vpervye-proshel-v-myan/" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<!-- Case Studies End -->
-
-<!-- Interactive Tools Start -->
-<!-- Interactive Tools Start -->
-<div class="container-xxl py-5 bg-light">
-    <div class="container">
-        <h2 class="text-center mb-4">Explore Our Interactive Tools</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="tool-item rounded p-4 bg-white">
-                    <i class="fa fa-cube fa-3x text-primary mb-3"></i>
-                    <h5>3D SMR</h5>
-                    <p>Interact with a 3D model of a Small Modular Reactor (SMR) to understand its design and functionality in detail.</p>
-                    <a href="3d-smrs.html" class="btn btn-primary">View Model</a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="tool-item rounded p-4 bg-white">
-                    <i class="fa fa-cube fa-3x text-primary mb-3"></i>
-                    <h5>3D NPP SMR</h5>
-                    <p>Explore a 3D model of a Nuclear Power Plant (NPP) with Small Modular Reactors (SMRs) to see how they integrate into larger systems.</p>
-                    <a href="3d-npp-smrs.html" class="btn btn-primary">View Model</a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="tool-item rounded p-4 bg-white">
-                    <i class="fa fa-calculator fa-3x text-primary mb-3"></i>
-                    <h5>Energy Calculator</h5>
-                    <p>Calculate potential savings and environmental benefits of different energy-saving measures and technologies.</p>
-                    <a href="energy-calculator.html" class="btn btn-primary">Try Now</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Interactive Tools End -->
-
-<!-- Interactive Tools End -->
-
+        <!-- Contract & Events End -->
 <!-- Upcoming Events Start -->
 <div class="container-xxl py-5">
     <div class="container">
@@ -267,7 +258,6 @@
 
 
 <!-- Footer Start -->
-<!-- Footer Start -->
 <footer class="container-xxl bg-dark text-white py-5">
     <div class="container text-center text-md-start">
         <div class="row">
@@ -279,9 +269,9 @@
                 <h6 class="text-uppercase fw-bold mb-4">Quick Links</h6>
                 <p><a href="index.html" class="text-white">Home</a></p>
                 <p><a href="about-smrs.html" class="text-white">About SMRs</a></p>
+                <p><a href="./dashboard.html" class="text-white">Dashboard</a></p>
                 <p><a href="interactive-tools.html" class="text-white">Interactive Tools</a></p>
-                <p><a href="news-updates.html" class="text-white">News & Updates</a></p>
-                <p><a href="contact.html" class="text-white">Contact</a></p>
+                <p><a href="faq.html" class="text-white">FAQs</a></p>
             </div>
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                 <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
@@ -295,7 +285,6 @@
 </footer>
 <!-- Footer End -->
 
-<!-- Footer End -->
 
     </div>
 
@@ -316,6 +305,3 @@
 </body>
 
 </html>
-
-
-this is the homepage of my website for hackathon with a title of "Interactive application to promote the development of small power reactors in Myanmar". create a quiz page for me

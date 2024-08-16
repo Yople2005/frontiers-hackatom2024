@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Energy Calculator | Interactive Tools</title>
+    <title>Energy Calculator</title>
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -24,13 +24,16 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/style.css">
     <style>
-        /* Custom CSS for Energy Calculator Page */
+        /* Custom CSS for Renewable Energy Feasibility Calculator */
         body {
-            background-color: #f8f9fa;
+            background-color: #ffffff;
         }
 
+        .start {
+            margin-top: 10%;
+        }
         .container {
-            margin-top: 60px;
+            margin-top: 40px;
         }
 
         .navbar {
@@ -55,11 +58,10 @@
             transition: background-color 0.3s ease;
             display: block;
             width: 100%;
-
         }
 
         .btn-submit:hover {
-            background-color: #1d4ed8;
+            background-color: #aaaaaa;
             border-color: #1d4ed8;
         }
 
@@ -71,17 +73,17 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        footer{
-            margin-top:10px;
+        footer {
+            margin-top: 10px;
         }
     </style>
 </head>
 
 <body>
-    <div class="container-xxl bg-white p-0">
+    <div class="container-xxl bg-white p-0 start">
         <!-- Navbar Start -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
-            <a href="index.html" class="navbar-brand p-0">
+            <a href="./index.html" class="navbar-brand p-0">
                 <h1 class="text-primary m-0"><i class="fa fa-radiation"></i> Hackathon</h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -91,44 +93,48 @@
                 <div class="navbar-nav ms-auto py-0 pe-4">
                     <a href="index.html" class="nav-item nav-link">Home</a>
                     <a href="about-smrs.html" class="nav-item nav-link">About SMRs</a>
-                    <a href="interactive-tools.html" class="nav-item nav-link">Interactive Tools</a>
-                    <a href="news-updates.html" class="nav-item nav-link">News & Updates</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="faq.html" class="dropdown-item">FAQs</a>
-                            <a href="benefits-of-smrs.html" class="dropdown-item">Benefits of SMRs</a>
-                        </div>
-                    </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="dashboard.html" class="nav-item nav-link">Dashboard</a>
+                    <a href="./interactive-tools.html" class="nav-item nav-link active">Interactive Tools</a>
+                    <a href="faq.html" class="nav-item nav-link">FAQs</a>
+                    
                 </div>
-                <a href="" class="btn btn-primary py-2 px-4">Get Involved</a>
+                <a href="quiz.html" class="btn btn-primary py-2 px-4">Quiz</a>
             </div>
         </nav>
         <!-- Navbar End -->
 
-        <!-- Energy Calculator Tool Start -->
+        <!-- Renewable Energy Feasibility Calculator Start -->
         <div class="container">
-            <h2 class="page-header">Energy Calculator</h2>
-            <form id="energyCalculatorForm">
+            <h2 class="page-header">Renewable Energy Feasibility Calculator</h2>
+            <form id="feasibilityCalculatorForm">
                 <div class="form-group">
-                    <label for="currentEnergyUsage">Current Energy Usage (kWh/month)</label>
-                    <input type="number" class="form-control" id="currentEnergyUsage" placeholder="Enter current energy usage" required>
+                    <label for="averageEnergyUsage">Average Monthly Energy Usage (kWh)</label>
+                    <input type="number" class="form-control" id="averageEnergyUsage" placeholder="Enter average energy usage" required>
                 </div>
                 <div class="form-group">
-                    <label for="newEnergyUsage">New Energy Usage (kWh/month)</label>
-                    <input type="number" class="form-control" id="newEnergyUsage" placeholder="Enter new energy usage" required>
+                    <label for="energyType">Type of Renewable Energy</label>
+                    <select class="form-select" id="energyType" required>
+                        <option value="" disabled selected>Select energy type</option>
+                        <option value="solar">Solar</option>
+                        <option value="wind">Wind</option>
+                        <option value="hydro">Hydro</option>
+                    </select>
                 </div>
-                <button type="submit" class="btn btn-submit">Calculate Savings</button>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" class="form-control" id="location" placeholder="Enter your location" required>
+                </div>
+                <button type="submit" class="btn btn-submit">Calculate Feasibility</button>
             </form>
 
             <div class="results" id="results" style="display: none;">
-                <h3>Results</h3>
-                <p><strong>Potential Savings:</strong> <span id="savings"></span></p>
-                <p><strong>Environmental Benefits:</strong> <span id="benefits"></span></p>
+                <h3>Feasibility Results</h3>
+                <p><strong>Estimated Savings:</strong> <span id="savings"></span></p>
+                <p><strong>Potential Energy Production:</strong> <span id="production"></span></p>
+                <p><strong>Environmental Impact:</strong> <span id="impact"></span></p>
             </div>
         </div>
-        <!-- Energy Calculator Tool End -->
+        <!-- Renewable Energy Feasibility Calculator End -->
 
         <!-- Footer Start -->
         <footer class="container-xxl bg-dark text-white py-2">
@@ -167,20 +173,37 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <!-- Custom Script -->
     <script>
-        document.getElementById('energyCalculatorForm').addEventListener('submit', function(event) {
+        document.getElementById('feasibilityCalculatorForm').addEventListener('submit', function(event) {
             event.preventDefault();
 
             // Get values from the form
-            const currentEnergyUsage = parseFloat(document.getElementById('currentEnergyUsage').value);
-            const newEnergyUsage = parseFloat(document.getElementById('newEnergyUsage').value);
+            const averageEnergyUsage = parseFloat(document.getElementById('averageEnergyUsage').value);
+            const energyType = document.getElementById('energyType').value;
+            const location = document.getElementById('location').value;
 
-            // Calculate potential savings
-            const savings = (currentEnergyUsage - newEnergyUsage) * 0.1; // Example savings calculation
-            const benefits = (currentEnergyUsage - newEnergyUsage) * 0.05; // Example environmental benefits calculation
+            // Example calculations (These should be replaced with actual feasibility calculations)
+            let estimatedSavings = 0;
+            let potentialProduction = 0;
+            let environmentalImpact = '';
+
+            if (energyType === 'solar') {
+                estimatedSavings = averageEnergyUsage * 0.12; // Placeholder calculation
+                potentialProduction = averageEnergyUsage * 0.8; // Placeholder calculation
+                environmentalImpact = 'Reduced CO2 emissions by approximately 1 ton per year.';
+            } else if (energyType === 'wind') {
+                estimatedSavings = averageEnergyUsage * 0.15; // Placeholder calculation
+                potentialProduction = averageEnergyUsage * 0.9; // Placeholder calculation
+                environmentalImpact = 'Reduced CO2 emissions by approximately 1.5 tons per year.';
+            } else if (energyType === 'hydro') {
+                estimatedSavings = averageEnergyUsage * 0.10; // Placeholder calculation
+                potentialProduction = averageEnergyUsage * 0.85; // Placeholder calculation
+                environmentalImpact = 'Reduced CO2 emissions by approximately 1.2 tons per year.';
+            }
 
             // Display results
-            document.getElementById('savings').textContent = `$${savings.toFixed(2)} per month`;
-            document.getElementById('benefits').textContent = `${benefits.toFixed(2)} tons of CO2 per month`;
+            document.getElementById('savings').innerText = `$${estimatedSavings.toFixed(2)}`;
+            document.getElementById('production').innerText = `${potentialProduction.toFixed(2)} kWh per year`;
+            document.getElementById('impact').innerText = environmentalImpact;
 
             document.getElementById('results').style.display = 'block';
         });

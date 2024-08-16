@@ -31,6 +31,20 @@
         .navbar {
     background-color: #0F172B !important; /* Replace with your desired color */
 }
+@keyframes dropFromTop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-drop {
+    animation: dropFromTop 1s ease-out;
+}
 
     </style>
 </head>
@@ -40,7 +54,7 @@
         <!-- Navbar Start -->
         <div class="container-xxl position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
-                <a href="" class="navbar-brand p-0">
+                <a href="./index.html" class="navbar-brand p-0">
                     <h1 class="text-primary m-0"><i class="fa fa-radiation"></i> Hackathon</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -50,23 +64,24 @@
                     <div class="navbar-nav ms-auto py-0 pe-4">
                         <a href="index.html" class="nav-item nav-link">Home</a>
                         <a href="about-smrs.html" class="nav-item nav-link">About SMRs</a>
-                        <a href="benefits-of-smr.html" class="nav-item nav-link">Benefits of SMRs</a>
-                        <a href="news-updates.html" class="nav-item nav-link">News & Updates</a>
+                        <a href="dashboard.html" class="nav-item nav-link">Dashboard</a>
+                        <a href="./interactive-tools.html" class="nav-item nav-link">Interactive Tools</a>
                         <a href="faq.html" class="nav-item nav-link active">FAQs</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        
                     </div>
-                    <a href="" class="btn btn-primary py-2 px-4">Quiz</a>
+                    <a href="quiz.html" class="btn btn-primary py-2 px-4">Quiz</a>
                 </div>
             </nav>
 
             <div class="container-xxl py-5 bg-dark hero-header mb-5">
                 <div class="container text-center my-5 pt-5 pb-4">
-                    <h1 class="display-3 text-white mb-3 animated slideInDown">Frequently Asked Questions</h1>
+                    <h1 class="display-3 text-white mb-3 animated slideInDown animate-drop">FAQs</h1>
+
 
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center text-uppercase">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                            <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="./index.html">Pages</a></li>
                             <li class="breadcrumb-item text-white active" aria-current="page">FAQs</li>
                         </ol>
                     </nav>
@@ -162,23 +177,16 @@
                         <h6 class="text-uppercase fw-bold mb-4">Quick Links</h6>
                         <p><a href="index.html" class="text-white">Home</a></p>
                         <p><a href="about-smrs.html" class="text-white">About SMRs</a></p>
+                        <p><a href="./dashboard.html" class="text-white">Dashboard</a></p>
                         <p><a href="interactive-tools.html" class="text-white">Interactive Tools</a></p>
-                        <p><a href="news-updates.html" class="text-white">News & Updates</a></p>
                         <p><a href="faq.html" class="text-white">FAQs</a></p>
-                        <p><a href="contact.html" class="text-white">Contact</a></p>
                     </div>
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-4">
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                         <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-                        <p><i class="fas fa-home me-3"></i> Yangon, Myanmar</p>
-                        <p><i class="fas fa-envelope me-3"></i> info@example.com</p>
-                        <p><i class="fas fa-phone me-3"></i> +01 234 567 89</p>
-                    </div>
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <h6 class="text-uppercase fw-bold mb-4">Follow Us</h6>
-                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-youtube"></i></a>
+                        <p><i class="fas fa-home me-3"></i>1234 Street Name, City, Country</p>
+                        <p><i class="fas fa-envelope me-3"></i>info@example.com</p>
+                        <p><i class="fas fa-phone me-3"></i>+123 456 7890</p>
+                        <p><i class="fas fa-fax me-3"></i>+123 456 7891</p>
                     </div>
                 </div>
             </div>

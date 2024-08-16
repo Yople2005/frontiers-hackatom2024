@@ -3,149 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz App</title>
+    <title>Quiz</title>
     <style>
-        #quiz { margin: 20px; }
-        #timer { margin: 10px 0; }
-        #result { font-weight: bold; }
-        .question { font-size: 20px; margin-bottom: 10px; }
-        .options div { margin-bottom: 5px; }
-        button { margin: 5px; }
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#quiz-section {
+    margin-top: 20px;
+}
+
+#quiz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#question {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#choices {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.choice-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.choice-btn:hover {
+    background-color: #0056b3;
+}
+
+#next-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#next-btn:hover {
+    background-color: #218838;
+}
+
+#score {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
     </style>
+    
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-    <div id="quiz"></div>
-    <div id="timer"></div>
-    <div id="result"></div>
-    <button id="start-btn">Start Quiz</button>
-    <button id="next-btn" style="display: none;">Next</button>
-    <button id="restart-btn" style="display: none;">Restart</button>
+    <div class="container-xxl position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+            <a href="./index.html" class="navbar-brand p-0">
+                <h1 class="text-primary m-0"><i class="fa fa-radiation"></i> Hackathon</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0 pe-4">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about-smrs.html" class="nav-item nav-link">About SMRs</a>
+                    <a href="dashboard.html" class="nav-item nav-link">Dashboard</a>
+                    <a href="./interactive-tools.html" class="nav-item nav-link">Interactive Tools</a>
+                    <a href="faq.html" class="nav-item nav-link">FAQs</a>
+                    
+                </div>
+                <a href="quiz.html" class="btn btn-primary py-2 px-4 active">Quiz</a>
+            </div>
+        </nav>
+
+        <div class="container-xxl py-5 bg-dark hero-header mb-5">
+            <div class="container text-center my-5 pt-5 pb-4">
+                <h1 class="display-3 text-white mb-3 animated slideInDown">Quiz</h1>
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center text-uppercase">
+                        <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="./index.html">Pages</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">Quiz</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section id="quiz-section">
+            <h2>Test Your Knowledge</h2>
+            <div id="quiz-container">
+                <div id="question"></div>
+                <div id="choices"></div>
+                <div id="question-counter"></div> <!-- Counter for questions -->
+                <button id="next-btn" onclick="nextQuestion()">Next</button>
+                <p id="score"></p>
+            </div>
+        </section>
+    </main>
+    
+
+    <footer class="container-xxl bg-dark text-white py-5">
+        <div class="container text-center text-md-start">
+            <div class="row">
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">About Us</h6>
+                    <p>At the forefront of innovation, we drive the adoption of small modular reactors (SMRs) to revolutionize energy access in Myanmar. Our focus is on advancing technology, fostering sustainable development, and empowering communities with clean, reliable energy solutions.</p>
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Quick Links</h6>
+                    <p><a href="index.html" class="text-white">Home</a></p>
+                    <p><a href="about-smrs.html" class="text-white">About SMRs</a></p>
+                    <p><a href="./dashboard.html" class="text-white">Dashboard</a></p>
+                    <p><a href="interactive-tools.html" class="text-white">Interactive Tools</a></p>
+                    <p><a href="faq.html" class="text-white">FAQs</a></p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                    <p><i class="fas fa-home me-3"></i>1234 Street Name, City, Country</p>
+                    <p><i class="fas fa-envelope me-3"></i>info@example.com</p>
+                    <p><i class="fas fa-phone me-3"></i>+123 456 7890</p>
+                    <p><i class="fas fa-fax me-3"></i>+123 456 7891</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script>
+        let currentQuestionIndex = 0;
+        let score = 0;
+    
         const quizData = [
-    {
-        question: "What is the main fuel used in most nuclear reactors?",
-        options: ["Uranium", "Thorium", "Plutonium", "Radon"],
-        answer: "Uranium"
-    },
-    {
-        question: "What does SMR stand for in the context of nuclear energy?",
-        options: ["Small Modular Reactor", "Single Modular Reactor", "Standard Modular Reactor", "Safe Modular Reactor"],
-        answer: "Small Modular Reactor"
-    },
-    {
-        question: "Which of the following is a benefit of SMRs?",
-        options: ["Smaller footprint", "Higher waste production", "Complexity in operation", "Higher costs"],
-        answer: "Smaller footprint"
-    },
-    {
-        question: "What is the primary advantage of nuclear power?",
-        options: ["Low greenhouse gas emissions", "High fuel cost", "High water usage", "High waste production"],
-        answer: "Low greenhouse gas emissions"
-    },
-    {
-        question: "Which type of reactor is designed to be smaller and more flexible in location?",
-        options: ["Pressurized Water Reactor", "Boiling Water Reactor", "Small Modular Reactor", "CANDU Reactor"],
-        answer: "Small Modular Reactor"
-    }
-];
-
-let currentQuestionIndex = 0;
-let score = 0;
-let timer;
-const timerDuration = 10; // Timer duration in seconds
-
-function startQuiz() {
-    document.getElementById('start-btn').style.display = 'none';
-    document.getElementById('next-btn').style.display = 'inline-block';
-    document.getElementById('restart-btn').style.display = 'none';
-    loadQuiz();
-    startTimer();
-}
-
-function startTimer() {
-    clearInterval(timer); // Clear any existing timer interval
+            {
+                question: "What is a small power reactor?",
+                choices: ["A large-scale nuclear power plant", "A small modular nuclear reactor", "A renewable energy source", "A type of coal power plant"],
+                correct: 1
+            },
+            {
+                question: "Why are small power reactors suitable for Myanmar?",
+                choices: ["Cost-effective and scalable", "High CO2 emissions", "Large land requirements", "Dependence on fossil fuels"],
+                correct: 0
+            },
+            {
+                question: "What is the main benefit of small power reactors?",
+                choices: ["High construction costs", "Slow deployment", "Safety and modularity", "Limited application"],
+                correct: 2
+            },
+            {
+                question: "How do small power reactors contribute to energy security?",
+                choices: ["By increasing dependence on imported fuel", "By providing reliable power in remote areas", "By requiring extensive infrastructure", "By being less safe than larger reactors"],
+                correct: 1
+            },
+            {
+                question: "What is one key feature of small modular reactors?",
+                choices: ["Large size", "Fixed location", "Modular design", "High cost"],
+                correct: 2
+            },
+            {
+                question: "Which of the following is a challenge for small power reactors?",
+                choices: ["High scalability", "High safety standards", "Public perception", "Low construction cost"],
+                correct: 2
+            },
+            {
+                question: "In which scenario are small power reactors particularly beneficial?",
+                choices: ["Urban areas with high power demands", "Remote locations with limited infrastructure", "Large metropolitan areas", "Countries with abundant natural resources"],
+                correct: 1
+            },
+            {
+                question: "What technology is often used to manage small power reactors?",
+                choices: ["Centralized control systems", "Distributed control systems", "Manual control systems", "Remote control systems"],
+                correct: 1
+            },
+            {
+                question: "What role do small power reactors play in sustainable energy solutions?",
+                choices: ["They increase greenhouse gas emissions", "They provide a backup for renewable energy sources", "They contribute to fossil fuel dependency", "They are not used in sustainable solutions"],
+                correct: 1
+            },
+            {
+                question: "Which organization is responsible for setting safety standards for small power reactors?",
+                choices: ["International Atomic Energy Agency (IAEA)", "World Health Organization (WHO)", "United Nations (UN)", "World Trade Organization (WTO)"],
+                correct: 0
+            }
+        ];
     
-    let timeLeft = timerDuration;
-    const timerElement = document.getElementById('timer');
-    timerElement.innerText = `Time Left: ${timeLeft}s`;
-
-    timer = setInterval(() => {
-        timeLeft--;
-        timerElement.innerText = `Time Left: ${timeLeft}s`;
-
-        if (timeLeft <= 0) {
-            clearInterval(timer);
-            nextQuestion(); // Automatically proceed to the next question when time is up
+        document.addEventListener("DOMContentLoaded", () => {
+            loadQuestion();
+        });
+    
+        function loadQuestion() {
+            const questionEl = document.getElementById('question');
+            const choicesEl = document.getElementById('choices');
+            const nextBtn = document.getElementById('next-btn');
+            const questionCounterEl = document.getElementById('question-counter');
+    
+            questionEl.innerHTML = quizData[currentQuestionIndex].question;
+            choicesEl.innerHTML = '';
+            quizData[currentQuestionIndex].choices.forEach((choice, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'choice-btn';
+                btn.innerText = choice;
+                btn.onclick = () => selectAnswer(index);
+                choicesEl.appendChild(btn);
+            });
+            nextBtn.disabled = true;
+    
+            // Update question counter
+            const questionsLeft = quizData.length - (currentQuestionIndex + 1);
+            questionCounterEl.innerHTML = `Questions left: ${questionsLeft}`;
         }
-    }, 1000);
-}
-
-function loadQuiz() {
-    const quizContainer = document.getElementById('quiz');
-    const currentQuestion = quizData[currentQuestionIndex];
     
-    const questionHtml = `
-        <div class="question">${currentQuestion.question}</div>
-        <div class="options">
-            ${currentQuestion.options.map((option, index) => `
-                <div>
-                    <input type="radio" id="option${index}" name="option" value="${option}">
-                    <label for="option${index}">${option}</label>
-                </div>
-            `).join('')}
-        </div>
-    `;
-    
-    quizContainer.innerHTML = questionHtml;
-}
-
-function submitAnswer() {
-    const selectedOption = document.querySelector('input[name="option"]:checked');
-    if (selectedOption) {
-        const answer = selectedOption.value;
-        if (answer === quizData[currentQuestionIndex].answer) {
-            score++;
+        function selectAnswer(index) {
+            const correctIndex = quizData[currentQuestionIndex].correct;
+            if (index === correctIndex) {
+                score++;
+            }
+            document.querySelectorAll('.choice-btn').forEach((btn, btnIndex) => {
+                if (btnIndex === correctIndex) {
+                    btn.style.backgroundColor = '#28a745';
+                } else {
+                    btn.style.backgroundColor = '#dc3545';
+                }
+                btn.disabled = true;
+            });
+            document.getElementById('next-btn').disabled = false;
         }
-    }
-}
-
-function nextQuestion() {
-    submitAnswer();
-
-    currentQuestionIndex++;
-    if (currentQuestionIndex < quizData.length) {
-        loadQuiz();
-        startTimer();
-    } else {
-        endQuiz();
-    }
-}
-
-function endQuiz() {
-    clearInterval(timer);
-    document.getElementById('quiz').style.display = 'none';
-    document.getElementById('next-btn').style.display = 'none';
-    document.getElementById('timer').style.display = 'none';
-    document.getElementById('result').innerText = `Your score: ${score} / ${quizData.length}`;
-    document.getElementById('restart-btn').style.display = 'inline-block';
-}
-
-function restartQuiz() {
-    currentQuestionIndex = 0;
-    score = 0;
-    document.getElementById('quiz').style.display = 'block';
-    document.getElementById('next-btn').style.display = 'inline-block';
-    document.getElementById('timer').style.display = 'block';
-    document.getElementById('result').innerText = '';
-    document.getElementById('restart-btn').style.display = 'none';
-    startQuiz();
-}
-
-document.getElementById('start-btn').addEventListener('click', startQuiz);
-document.getElementById('next-btn').addEventListener('click', nextQuestion);
-document.getElementById('restart-btn').addEventListener('click', restartQuiz);
-
+    
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizData.length) {
+                loadQuestion();
+            } else {
+                showScore();
+            }
+        }
+    
+        function showScore() {
+            const quizContainer = document.getElementById('quiz-container');
+            quizContainer.innerHTML = `<h3>Your Score: ${score} out of ${quizData.length}</h3>`;
+        }
+    
     </script>
+    
+    
 </body>
 </html>

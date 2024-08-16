@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Calculator</title>
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        /* Custom CSS for Carbon Footprint Calculator */
+        body {
+            background-color: #ffffff;
+        }
+
+        .start {
+            margin-top: 10%;
+        }
+        .container {
+            margin-top: 40px;
+        }
+
+        .navbar {
+            background-color: #0F172B !important;
+        }
+
+        .page-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .btn-submit {
+            background-color: #28a745;
+            border-color: #28a745;
+            border-radius: 50px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            display: block;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+
+        .results {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0 start">
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+            <a href="./index.html" class="navbar-brand p-0">
+                <h1 class="text-primary m-0"><i class="fa fa-radiation"></i> Hackathon</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0 pe-4">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about-smrs.html" class="nav-item nav-link">About SMRs</a>
+                    <a href="dashboard.html" class="nav-item nav-link">Dashboard</a>
+                    <a href="./interactive-tools.html" class="nav-item nav-link active">Interactive Tools</a>
+                    <a href="faq.html" class="nav-item nav-link">FAQs</a>
+                </div>
+                <a href="quiz.html" class="btn btn-primary py-2 px-4">Quiz</a>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+
+        <!-- Carbon Footprint Calculator Start -->
+        <div class="container">
+            <h2 class="page-header">Carbon Footprint Calculator</h2>
+            <form id="carbonFootprintForm">
+                <div class="form-group">
+                    <label for="milesDriven">Miles Driven per Week</label>
+                    <input type="number" class="form-control" id="milesDriven" placeholder="Enter miles driven per week" required>
+                </div>
+                <div class="form-group">
+                    <label for="electricityUsage">Electricity Usage (kWh/month)</label>
+                    <input type="number" class="form-control" id="electricityUsage" placeholder="Enter electricity usage" required>
+                </div>
+                <div class="form-group">
+                    <label for="gasUsage">Natural Gas Usage (therms/month)</label>
+                    <input type="number" class="form-control" id="gasUsage" placeholder="Enter natural gas usage" required>
+                </div>
+                <div class="form-group">
+                    <label for="meatConsumption">Meat Consumption (pounds/month)</label>
+                    <input type="number" class="form-control" id="meatConsumption" placeholder="Enter meat consumption" required>
+                </div>
+                <button type="submit" class="btn btn-submit">Calculate Carbon Footprint</button>
+            </form>
+
+            <div class="results" id="results" style="display: none;">
+                <h3>Results</h3>
+                <p><strong>Estimated Carbon Footprint:</strong> <span id="carbonFootprint"></span> tons CO2/year</p>
+            </div>
+        </div>
+        <!-- Carbon Footprint Calculator End -->
+
+        <!-- Footer Start -->
+        <footer class="container-xxl bg-dark text-white py-2">
+            <div class="container text-center text-md-start">
+                <div class="row">
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">About Us</h6>
+                        <p>At the forefront of innovation, we drive the adoption of small modular reactors (SMRs) to revolutionize energy access in Myanmar. Our focus is on advancing technology, fostering sustainable development, and empowering communities with clean, reliable energy solutions.</p>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Quick Links</h6>
+                        <p><a href="index.html" class="text-white">Home</a></p>
+                        <p><a href="about-smrs.html" class="text-white">About SMRs</a></p>
+                        <p><a href="interactive-tools.html" class="text-white">Interactive Tools</a></p>
+                        <p><a href="news-updates.html" class="text-white">News & Updates</a></p>
+                        <p><a href="faq.html" class="text-white">FAQs</a></p>
+                        <p><a href="contact.html" class="text-white">Contact</a></p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i> Yangon, Myanmar</p>
+                        <p><i class="fas fa-envelope me-3"></i> info@example.com</p>
+                        <p><i class="fas fa-phone me-3"></i> +95 123 4567</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End -->
+
+        <!-- Back to Top Button -->
+        <a href="#" class="btn btn-primary btn-lg back-to-top"><i class="fa fa-chevron-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Custom Script -->
+    <script>
+        document.getElementById('carbonFootprintForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get values from the form
+            const milesDriven = parseFloat(document.getElementById('milesDriven').value);
+            const electricityUsage = parseFloat(document.getElementById('electricityUsage').value);
+            const gasUsage = parseFloat(document.getElementById('gasUsage').value);
+            const meatConsumption = parseFloat(document.getElementById('meatConsumption').value);
+
+            // Constants for conversion factors
+            const milesToCO2 = 0.411; // kg CO2 per mile
+            const kWhToCO2 = 0.233; // kg CO2 per kWh
+            const thermsToCO2 = 5.3; // kg CO2 per therm
+            const meatToCO2 = 7.7; // kg CO2 per pound of meat
+
+            // Calculate CO2 emissions
+            const co2FromMiles = (milesDriven * milesToCO2 * 52) / 1000; // yearly CO2 in tons
+            const co2FromElectricity = (electricityUsage * kWhToCO2 * 12) / 1000; // yearly CO2 in tons
+            const co2FromGas = (gasUsage * thermsToCO2 * 12) / 1000; // yearly CO2 in tons
+            const co2FromMeat = (meatConsumption * meatToCO2 * 12) / 1000; // yearly CO2 in tons
+
+            // Total carbon footprint
+            const totalCO2 = co2FromMiles + co2FromElectricity + co2FromGas + co2FromMeat;
+
+            // Display results
+            document.getElementById('carbonFootprint').textContent = totalCO2.toFixed(2);
+            document.getElementById('results').style.display = 'block';
+        });
+    </script>
+</body>
+
+</html>
